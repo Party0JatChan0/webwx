@@ -365,9 +365,8 @@ public class WechatServiceImpl implements WechatService {
 					continue;
 				} else if (msg.getString("FromUserName").equals(wechatMeta.getUser().getString("UserName"))) {
 					continue;
-				} else if (msg.getString("ToUserName").indexOf("@@") != -1) {
-					String[] peopleContent = content.split(":<br/>");
-					LOGGER.info("|" + name + "| " + peopleContent[0] + ":\n" + peopleContent[1].replace("<br/>", "\n"));
+				} else if (msg.getString("FromUserName").indexOf("@@") != -1){
+					continue;
 				} else {
 					if(automsgflag == 1){
 						LOGGER.info(name + ": " + content);
